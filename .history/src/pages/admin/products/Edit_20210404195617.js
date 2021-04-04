@@ -1,0 +1,30 @@
+import React from 'react'
+import { Form, Card, Input, Button } from 'antd'
+
+function Edit(props) {
+  return (
+    <Card title="商品编辑">
+      <Form onSubmit={(e) => handleSubmit(e)}>
+        <Form.Item
+          label="名字"
+          name="name"
+          rules={[
+            {
+              required: true,
+              message: '请输入商品名字',
+            },
+          ]}
+        >
+          <Input placeholder="请输入商品名字" />
+        </Form.Item>
+        <Form.Item>
+          <Button htmlType="submit" type="primary">
+            保存
+          </Button>
+        </Form.Item>
+      </Form>
+    </Card>
+  )
+}
+
+export default Edit
